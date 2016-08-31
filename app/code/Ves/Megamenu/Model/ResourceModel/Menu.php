@@ -266,6 +266,7 @@ class Menu extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
             $versionIds = $this->lookupVersionIds($object->getId());
             $object->setData('version_id', $versionIds);
         }
+
         return parent::_afterLoad($object);
     }
 
@@ -360,7 +361,7 @@ class Menu extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         if($this->_vesData->getConfig('general_settings/enable_backup') && !isset($data['duplicate'])){
             $form_key = $data['form_key'];
             unset($data['form_key']);
-            if ((!isset($data['revert_previous']) && !isset($data['revert_next'])) && !empty($data)) {
+            if ((!isset($data['revert_previous']) && !isset($data['revert_next'])) && !empty($data) && isset($data['structure'])) {
                 try{
                     $menuId = $object->getId();
                     if(!$menuId){
@@ -377,14 +378,7 @@ class Menu extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
                         }
                     }
 
-echo "test ";
-echo "<pre>";
-print_r($data);
                     $structure = base64_encode(serialize($data['structure']));
-					echo "<pre>";
-					print_r($data['structure']);
-					echo "SECOND ";
-					print_r($structure);
                     unset($data['structure']);
                     $table = $this->getTable('ves_megamenu_menu_log');
                     $connection = $this->getConnection();
@@ -421,12 +415,12 @@ print_r($data);
                         $version = (int)$result[0]['version'] + 1;
                     }
                     $menuData = [
-                    'menu_id'        => $menuId,
-                    'version'        => $version,
-                    'menu_data'      => base64_encode(serialize($data)),
-                    'menu_structure' => $structure,
-                    'note'           => 'Note',
-                    'update_time'    => time()
+                        'menu_id'        => $menuId,
+                        'version'        => $version,
+                        'menu_data'      => base64_encode(serialize($data)),
+                        'menu_structure' => $structure,
+                        'note'           => 'Note',
+                        'update_time'    => time()
                     ];
                     $this->getConnection()->insert($table, $menuData);
                     $object->setData('current_version', $version);
