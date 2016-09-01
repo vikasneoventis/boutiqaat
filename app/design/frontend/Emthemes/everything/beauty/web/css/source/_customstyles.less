@@ -5,6 +5,11 @@
 @common_anchor:#434343;
 @common_anchor_hover:#cca745;
 
+
+/*import of custom files*/
+@import '_celebmasonry.less';
+@import '_tvpage.less';
+
 /*buttons,anchors*/
 a:hover, .alink:hover {
 	color: @common_anchor_hover;
@@ -442,3 +447,92 @@ a.action.primary {
 .product-info-main .stock.available {
 	color: green!important;
 }
+
+/*homepage celebrity block*/
+
+.gridmason-item { width:295px;float:left; }
+
+/*Mega Menu*/
+
+.ves-megamenu .dropdown-menu .subgroup.level1 > a {
+	padding: 5px 0;
+}
+.ves-megamenu .row {
+	margin-left: 0;
+    margin-right: 0;
+}
+@media only screen and (min-width: 768px), print {
+.em-header-14.page-header .em-menu-hoz {
+	width: inherit;
+}	
+.navigation .ves-megamenu .level0 .submenu .submenu, .ves-megamenu .subgroup > .submenu {
+	padding: 0;
+}
+.ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content .level2.nav-dropdown .col-sm-12{
+	padding: 0;
+	width: 100%;
+}
+.navigation .level0 .submenu a {
+	padding: 3px !important;
+	background:none!important;
+}
+
+.navigation .level0 .submenu a:hover {
+	padding: 3px !important;
+	background:@common_anchor_hover!important;
+}
+
+.megamenu-content .level2.nav-dropdown .row{
+	background: url(../images/submenu-icon.jpg) left center no-repeat;
+	padding: 0 0 0 10px;
+    margin: 0 0 0 5px;
+}
+
+.megamenu-content .level2.nav-dropdown .dropdown-submenu a {
+	color: #575757;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content .col-sm-12 {
+	width: 100%;
+	padding: 0!important;
+}
+.nav-beauty .col-sm-2 {
+	width: 16.33333333%!important;
+}
+
+.nav-celeb .col-sm-2 {
+	width: 16.66666666%!important;
+}
+
+.nav-watches .col-sm-12 {
+	width: 100%!important;
+}
+
+.ves-megamenu .dropdown-menu .content-wrap .megamenu-content {
+	padding: 10px 0 0 0;
+}	
+}
+
+#vesitem-4108814726234351866965072{
+	display:block!important;
+}
+
+.level2.dropdown-submenu .submenu.dropdown-menu {
+	background:#fff;
+}
+
+@media only screen and (max-width: 767px){
+.ves-menu .navigation .level0 > .submenu {
+    background: none!important;
+}
+.ves-megamenu.nav-mobile .dropdown-menu .subgroup.level1 > a {
+	color: #cca745!important;
+}	
+}
+
+.ves-megamenu li.level0 > a .fa.fa-female {
+	/*display:none;*/
+}
+
