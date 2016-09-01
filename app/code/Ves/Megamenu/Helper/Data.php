@@ -676,7 +676,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 			$this->_cats = $this->_categoryFactory->create()->getCollection()
 			->addAttributeToSelect('*')
 			->addAttributeToFilter('is_active','1')
-			->addAttributeToSort('position', 'asc');
+			->addAttributeToSort('name', 'asc');
 		}
 		return $this->_cats;
 	}

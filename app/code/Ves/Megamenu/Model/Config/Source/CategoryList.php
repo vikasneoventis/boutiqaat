@@ -78,7 +78,7 @@ class CategoryList implements \Magento\Framework\Option\ArrayInterface
         $allCats = $this->_categoryFactory->create()->getCollection()
         ->addAttributeToSelect('*')
         ->addAttributeToFilter('is_active','1')
-        ->addAttributeToSort('position', 'asc'); 
+        ->addAttributeToSort('name', 'asc'); 
         if ($parentId) {
             $allCats->addAttributeToFilter('parent_id',array('eq' => $parentId));
         }
