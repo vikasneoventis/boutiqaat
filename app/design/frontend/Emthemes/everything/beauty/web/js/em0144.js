@@ -11,7 +11,6 @@ define([
     'domReady!'
 ], function ($, keyboardHandler) {
     'use strict';
-
       /* sticky menu */
       if(EM.SETTING.STICKY_MENU == 1)
       {
@@ -121,15 +120,3 @@ define([
               }
        };
 });
-define([
-    'jquery',
-    'domReady!'
-], function ($, celebmasonry) {
-    'use strict';
-	$(".grid").masonry({
-			itemSelector: ".grid-item",
-			columnWidth: 100
-	});
-	
-});
-

@@ -9,6 +9,7 @@
 /*import of custom files*/
 @import '_celebmasonry.less';
 @import '_tvpage.less';
+@import '_listnav.less';
 
 /*buttons,anchors*/
 a:hover, .alink:hover {
@@ -260,6 +261,10 @@ a.action.primary {
 	margin-top: 10px;
 }
 
+.navbar-fixed-top .nav-sections-item-content {
+	margin-top: 0;
+}
+
 .em-menu-content li.level0 > a.em-menu-link {
 	background-color: #000;
 	color: #fff;
@@ -285,6 +290,8 @@ a.action.primary {
 .em-header-14.page-header .em-minicart {
     margin-top: 10px;
     margin-bottom: 10px;
+	position: relative;
+    z-index: 9999;
 }
 
 .header.content:not(.navbar-fixed-top) .minicart-wrapper .action.showcart {
@@ -300,6 +307,28 @@ a.action.primary {
 
 .em-search-style02 {
     margin-top: 10px;
+	z-index: 999999;
+    position: relative;
+	display:none;
+}
+
+.em-header-14.page-header .header.content:not(.navbar-fixed-top) .em-search-icon.mobile-search-icon {
+	display: block !important;
+    z-index: 999999;
+    position: relative;
+    float: right;
+    margin: 5px 0 0 0;
+    height: 46px;
+    width: 46px;
+    right: 0;
+}
+
+.em-header-14.page-header .header.content:not(.navbar-fixed-top) .em-search-icon.mobile-search-icon span:before {
+    line-height: 44px;
+}
+
+.header.content.navbar-fixed-top .em-search-icon.mobile-search-icon {
+	z-index: 9999;
 }
 
 /*footer*/
@@ -453,7 +482,6 @@ a.action.primary {
 .gridmason-item { width:295px;float:left; }
 
 /*Mega Menu*/
-
 .ves-megamenu .dropdown-menu .subgroup.level1 > a {
 	padding: 5px 0;
 }
@@ -462,8 +490,26 @@ a.action.primary {
     margin-right: 0;
 }
 @media only screen and (min-width: 768px), print {
+.ves-megamenu .nav-item > a {
+	padding: 0 15px;
+}
+
+.ves-megamenu {
+	background:none;
+}
+
+.ves-megamenu li {
+	background: #fff;
+}
+
+.ves-megamenu li.level0:hover > a {
+    background:@common_button_bg_color;
+}
+
 .em-header-14.page-header .em-menu-hoz {
-	width: inherit;
+	width: 100%;
+	position: absolute;
+	margin: 4px 0 0 0;
 }	
 .navigation .ves-megamenu .level0 .submenu .submenu, .ves-megamenu .subgroup > .submenu {
 	padding: 0;
@@ -481,17 +527,29 @@ a.action.primary {
 	padding: 3px !important;
 	background:@common_anchor_hover!important;
 }
-
+/*
 .megamenu-content .level2.nav-dropdown .row{
-	background: url(../images/submenu-icon.jpg) left center no-repeat;
+	background: url(../images/submenu-icon.png) left center no-repeat;
 	padding: 0 0 0 10px;
     margin: 0 0 0 5px;
-}
+}*/
 
 .megamenu-content .level2.nav-dropdown .dropdown-submenu a {
 	color: #575757;
 	font-size: 14px;
 	font-weight: normal;
+}
+
+.nav-celeb .megamenu-content .level1.dropdown-submenu a,.nav-brands .megamenu-content .level1.dropdown-submenu a,.nav-perfumes .megamenu-content .level1.dropdown-submenu a,.nav-eyewear .megamenu-content .level1.dropdown-submenu a {
+	/*background:url(../images/submenu-icon.png) left 7px no-repeat!important;
+	padding-left:10px!important;*/
+	color: #575757;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.nav-celeb .megamenu-content .level1.dropdown-submenu a:hover,.nav-brands .megamenu-content .level1.dropdown-submenu a:hover,.nav-perfumes .megamenu-content .level1.dropdown-submenu a:hover,.nav-eyewear .megamenu-content .level1.dropdown-submenu a:hover {
+	/*background-color:@common_button_bg_color!important;*/
 }
 
 .ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content .col-sm-12 {
@@ -502,25 +560,43 @@ a.action.primary {
 	width: 16.33333333%!important;
 }
 
-.nav-celeb .col-sm-2 {
+.nav-celeb .col-sm-2,.nav-brands .col-sm-2 {
 	width: 16.66666666%!important;
 }
 
-.nav-watches .col-sm-12 {
+.nav-watches .col-sm-12,.nav-brands .col-sm-12 {
 	width: 100%!important;
 }
+
+.nav-brands .mega-col.col-sm-12 {
+	padding-left: 0!important;
+}
+    
+
+/*.nav-brands .col-xs-12 {
+    width: 12.5%!important	;
+}*/
 
 .ves-megamenu .dropdown-menu .content-wrap .megamenu-content {
 	padding: 10px 0 0 0;
 }	
+
+/*brands menu*/
+
+.nav-brands .dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown {
+	max-height: 300px;
+    overflow-y: scroll;
 }
 
-#vesitem-4108814726234351866965072{
-	display:block!important;
+
 }
 
 .level2.dropdown-submenu .submenu.dropdown-menu {
 	background:#fff;
+}
+
+#maincontent .widget.block.block-static-block .em-background-parallax-full.show-mobile {
+	display:none;
 }
 
 @media only screen and (max-width: 767px){
@@ -529,10 +605,63 @@ a.action.primary {
 }
 .ves-megamenu.nav-mobile .dropdown-menu .subgroup.level1 > a {
 	color: #cca745!important;
+}
+.nav-mobile .dropdown-menu .content-wrap .megamenu-sidebar {
+	display:none;
 }	
+.nav-mobile .dropdown-menu .content-wrap .megamenu-content {
+	padding: 20px 0 0 0;
+}
+#maincontent .widget.block.block-static-block .em-background-parallax-full.show-mobile {
+	display:block;
+}
+#maincontent .widget.block.block-static-block .em-background-parallax-full.hide-mobile {
+	display:none;
+}
+
 }
 
 .ves-megamenu li.level0 > a .fa.fa-female {
 	/*display:none;*/
+}
+
+.ios .nav-sections {
+	left:-81%;
+}
+
+.ios .nav-sections {
+	width:81%;
+}
+
+.nav-electronics,.nav-women,.nav-gear,.nav-newproducts,.nav-jewellery {
+	    display: none!important;
+}
+
+.cat-label-v2 {
+	background: @common_button_bg_color;
+}
+
+.cat-label-v2.pin-top::before {
+	border-top-color: @common_button_bg_color;
+}
+
+.nav-brands .megamenu-sidebar .left-sidebar {
+	margin:0 2%;
+}
+
+ul.brands {
+	width:80%;
+    padding: 0!important;
+    border-bottom: none;
+    border-right: none;
+}
+
+ul.brands li.col-xl-4{
+	float:left;
+	width:25%;
+}
+
+ul.brands li.col-xl-4 a:hover {
+	background-color:none!important;
 }
 

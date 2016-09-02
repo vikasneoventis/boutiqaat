@@ -1,6 +1,6 @@
 
     <p id="back-top" style="display: none;"><a title="<?php echo __('Top')?>" href="#top"><?php echo __('Top')?></a></p>
-    <script type="text/javascript">
+	<script type="text/javascript">
     //<![CDATA[
     require([
     'jquery'
@@ -27,7 +27,24 @@
                         });
                     
                 }
+			
     });
         
     //]]>
     </script>
+	
+	
+	<script type="text/javascript">
+    //<![CDATA[
+    require(['jquery','sortListing'], function($){
+		$(window).load(function() {
+		$('.nav-brands .dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').listnav({
+			includeNums: false,
+		});
+		});
+	});
+		
+		
+    //]]>
+    </script>
+	

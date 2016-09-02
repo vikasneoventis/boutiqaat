@@ -6,7 +6,8 @@
 var config = {
     map: {
         '*': {
-			quickShop: 'Emthemes_QuickShop/js/quickshop'
+			quickShop: 'Emthemes_QuickShop/js/quickshop',
+			sortListing: 'Emthemes_QuickShop/js/listnav'
         }
     }
 };
