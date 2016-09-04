@@ -33,10 +33,27 @@ a.button-link:hover,a.button-link.first:hover {
     color: @common_anchor_hover;
 }
 
+.wrapper-breadcrums a:hover {
+    color: @common_anchor_hover;
+}
+
+.wrapper-breadcrums a:active {
+    color: @common_anchor_hover;
+}
+
+.modes-mode.active,.modes-mode:hover:before,.modes-mode.active:before {
+    color:@common_anchor_hover;
+}
+
 /*layout*/
 
 .page-main,.page-bottom {
 	background-color: rgba(240, 240, 240, 0.2);
+}
+@media only screen and (max-width: 767px) {
+body .cms-index-index .columns .column.main {
+	padding-bottom: 0;
+}
 }
 
 .em-line-01 .block-title strong, .block.crosssell .block-title strong, .block.upsell .block-title strong, .block.related .block-title strong, .page-main .widget .block-title strong, .em-line-01 .em-block-title strong, .block.crosssell .em-block-title strong, .block.upsell .em-block-title strong, .block.related .em-block-title strong, .page-main .widget .em-block-title strong, .em-line-01 .em-widget-title strong, .block.crosssell .em-widget-title strong, .block.upsell .em-widget-title strong, .block.related .em-widget-title strong, .page-main .widget .em-widget-title strong, .em-line-01 .block-title h2, .block.crosssell .block-title h2, .block.upsell .block-title h2, .block.related .block-title h2, .page-main .widget .block-title h2, .em-line-01 .em-block-title h2, .block.crosssell .em-block-title h2, .block.upsell .em-block-title h2, .block.related .em-block-title h2, .page-main .widget .em-block-title h2, .em-line-01 .em-widget-title h2, .block.crosssell .em-widget-title h2, .block.upsell .em-widget-title h2, .block.related .em-widget-title h2, .page-main .widget .em-widget-title h2, .em-line-01 .block-title h3, .block.crosssell .block-title h3, .block.upsell .block-title h3, .block.related .block-title h3, .page-main .widget .block-title h3, .em-line-01 .em-block-title h3, .block.crosssell .em-block-title h3, .block.upsell .em-block-title h3, .block.related .em-block-title h3, .page-main .widget .em-block-title h3, .em-line-01 .em-widget-title h3, .block.crosssell .em-widget-title h3, .block.upsell .em-widget-title h3, .block.related .em-widget-title h3, .page-main .widget .em-widget-title h3 {
@@ -618,7 +635,12 @@ a.action.primary {
 #maincontent .widget.block.block-static-block .em-background-parallax-full.hide-mobile {
 	display:none;
 }
-
+.em-wrapper-best-slider.space-block {
+	margin-bottom: 0;
+}
+.footer.content {
+	padding-top:0;
+}
 }
 
 .ves-megamenu li.level0 > a .fa.fa-female {
@@ -665,3 +687,12 @@ ul.brands li.col-xl-4 a:hover {
 	background-color:none!important;
 }
 
+/*Homepage Testimonial*/
+
+.em-wrapper-area05 .em-slider-category.owl-carousel {
+	margin: 0;
+} 
+
+.em-wrapper-area05 .em-slider-category.owl-carousel .owl-item {
+	padding: 0;
+}
