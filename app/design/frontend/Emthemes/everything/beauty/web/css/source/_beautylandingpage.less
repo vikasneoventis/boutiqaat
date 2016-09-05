@@ -23,24 +23,8 @@
 		padding-right: 0;
 		padding-left: 30px;
 		color: #333;
-		.lavel1 {
-			text-transform: uppercase;
-			font-size: 22px;
-			font-weight: 600;
-			margin-bottom: 2px;
-		}
-		.common-lavel {
-			text-transform: capitalize;
-			margin-bottom: 0;
-		}
-		.lavel2 {
-			font-size: 18px;
-			font-weight: 600;
-			.common-lavel;
-		}
-		.lavel3 {
-			font-size: 14px;
-			.common-lavel;
+		.promo-banner-lg {
+			display:none;
 		}
 	}
 	// title
@@ -68,6 +52,11 @@
 			}
 		}
 	}
+	//common tree nav
+	.ves-megamenu .dropdown-menu .content-wrap .megamenu-content {
+		padding: 0;
+	}
+	
 }
 
 @media (min-width:768px){
@@ -75,9 +64,6 @@
 		.category-block {
 			.block-title {
 				display:none;
-			}
-			.ves-megamenu .dropdown-menu .content-wrap .megamenu-content {
-				padding: 0;
 			}
 			.ves-megamenu.ves-vertical .dropdown.submenu-left {
 				padding: 0 0 8px 0;
@@ -124,9 +110,13 @@
 }
 
 @media (max-width:767px){
+	.cms-test-beauty .page-main {
+		padding-top: 15px;
+	}
 	.beauty-static-content {
 		// images block
 		.image-block {
+			clear:both;
 			.promo-banners,
 			.promo-banner-lg {
 				padding-left: 0;
@@ -138,7 +128,14 @@
 			}
 		}
 		.category-block {
-			
+			padding-left: 0;
+			float: none;
+			width: 100%;
+			.promo-banner-lg {
+				display:block;
+				margin: 0 0 10px 0;
+				padding: 0;
+			}
 		}
 		.em-block-title {
 			margin-left: 0;
@@ -156,8 +153,54 @@
 				}
 			}
 		}
+		.ves-megamenu.ves-vertical {
+			border-top: 1px solid #ddd;
+			background: none;
+			border-left: none;
+			border-right: none;
+			border-bottom: none;
+		}
+		
+		.nav-mobile li.level0 > a,.nav-mobile .nav-item > a {
+			border-bottom:1px #e2e2e2 solid;
+		}
+		
+		.ves-megamenu .opener {
+			padding: 8px 20px;
+		}
+		.ves-megamenu .opener.item-active {
+			background: none;
+		}
+		
+		.ves-megamenu .opener:before {
+			content: "\f107";
+			font-size: 30px;
+			color:#989898;
+		}
+		.ves-megamenu .opener.item-active:before {
+			content: "\f106";
+		}
+		.ves-megamenu .level1.nav-dropdown .opener {
+			padding: 14px 20px;
+		}
+		
+		.ves-megamenu .level1.nav-dropdown .opener:before {
+			content: "\f067";
+			font-size: 18px;
+		}
+		.ves-megamenu .level1.nav-dropdown .opener.item-active:before {
+			content: "\f068";
+		}
+		
+		.navigation li.level0,.navigation li.level0:hover {
+			border:none;
+		}
 		.ves-megamenu.ves-vertical li.level0 {
 			position: relative !important;
+			clear: both;
+		}
+		.ves-megamenu.ves-vertical li.level0>.submenu {
+			border:none;
 		}
 	}
 }
