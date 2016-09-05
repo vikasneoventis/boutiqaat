@@ -21,6 +21,7 @@
  	map: {
  		"*": {
  			megamenuowlcarousel: "Ves_Megamenu/js/owl.carousel.min",
+			listnavpagination: "Ves_Megamenu/js/listnav"
  		}
  	}
  };
