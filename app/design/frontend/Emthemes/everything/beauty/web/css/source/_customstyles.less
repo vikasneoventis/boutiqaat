@@ -52,7 +52,7 @@ a.button-link:hover,a.button-link.first:hover {
 	background-color: rgba(240, 240, 240, 0.2);
 }
 @media only screen and (max-width: 767px) {
-body .cms-index-index .columns .column.main {
+body.cms-index-index .columns .column.main {
 	padding-bottom: 0;
 }
 }
@@ -605,7 +605,10 @@ a.action.primary {
 	max-height: 300px;
     overflow-y: scroll;
 }
-
+.ves-megamenu .dropdown-menu .megamenu-header input[type="search"]{
+	width:50%;
+	float: right
+}
 
 }
 
@@ -639,8 +642,11 @@ a.action.primary {
 .em-wrapper-best-slider.space-block {
 	margin-bottom: 0;
 }
+.page-footer .em-footer-info {
+	padding-top: 0;
+}
 .footer.content {
-	padding-top:0;
+	padding-top:0!important;
 }
 }
 

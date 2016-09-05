@@ -42,6 +42,14 @@
 		});
 		});
 	});
+	requirejs(['jquery','listnavfilter'], function($){
+		jQuery(document).ready(function($) {
+			$('.nav-brands .submenu.dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').lookingfor({
+				input: $('input[name="query"]'),
+				items: 'div.row'
+			});
+		});
+	});
 	
     </script>
 	
