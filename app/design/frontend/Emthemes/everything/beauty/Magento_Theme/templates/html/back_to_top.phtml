@@ -35,11 +35,14 @@
 	
 	
 	<script type="text/javascript">
-	requirejs(['listnavpagination'], function($){
-		jQuery(document).ready(function($) {
-		$('.nav-brands .submenu.dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').listnav({
-			includeNums: false,
-		});
+	requirejs(['jquery','listnavpagination'], function($){
+		$( window ).load(function() {
+			$('#row-wrapper0').listnav({
+				includeNums: false,
+			});
+			$('#row-wrapper2').listnav({
+				includeNums: false,
+			});
 		});
 	});
 	requirejs(['jquery','listnavfilter'], function($){
@@ -47,6 +50,9 @@
 			$('.nav-brands .submenu.dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').lookingfor({
 				input: $('input[name="query"]'),
 				items: 'div.row'
+			});
+			$('.dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').each(function(i) {
+				$(this).attr('id', 'row-wrapper' + i);
 			});
 		});
 	});
