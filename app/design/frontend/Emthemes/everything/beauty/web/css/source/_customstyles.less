@@ -322,6 +322,14 @@ a.action.primary {
 
 /*search*/
 
+.em-search.mobile-search-wrapper .em-container-js-mobile-search {
+	display:none;
+}
+
+.em-search.mobile-search-wrapper.active .em-container-js-mobile-search {
+	display:block;
+}
+
 .em-search-style02 {
     margin-top: 10px;
 	z-index: 999999;
@@ -674,11 +682,11 @@ a.action.primary {
 }
 
 .cat-label-v2 {
-	background: @common_button_bg_color;
+	background: @common_button_bg_color!important;
 }
 
 .cat-label-v2.pin-top::before {
-	border-top-color: @common_button_bg_color;
+	border-top-color: @common_button_bg_color!important;
 }
 
 .nav-brands .megamenu-sidebar .left-sidebar {
@@ -967,7 +975,7 @@ width: 14px;
 		display:none;
 	}
 	.nav-beauty.nav-mobile {
-		display:block;
+		display:block!important;
 	}
 }
 
