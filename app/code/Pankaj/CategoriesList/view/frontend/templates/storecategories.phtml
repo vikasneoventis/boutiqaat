@@ -1,39 +1,131 @@
+<style>
+	.brand_letter{background: #404040; border-radius: 50%;color: #fff;font-size: 18px;font-weight: bold; height: 30px; line-height: 20px; padding: 5px; text-align: center; width: 30px;margin-bottom: 15px;}
+	.brand_indivdual a {display: block; overflow: hidden; font-size: 16px; line-height: 26px;}
+	.brand_group {padding:0px;}
+	ul#brands-filter { margin: 0; margin-bottom:20px; padding: 0; padding-left: 0px; line-height: 30px; border-bottom: 1px solid #000;list-style: none;}
+	ul#brands-filter li {display:inline;}
+	ul#brands-filter a { margin-right: 0.30em; padding: 0.5em; color: #000; font-weight: bold; text-decoration: none;}
+</style>
+<ul id="brands-filter">
+      <li><a href="#all" title="">All</a></li>
+      <li><a href="#A" title="" rel="A">A</a></li>
+      <li><a href="#B" title="" rel="B">B</a></li>
+      <li><a href="#C" title="" rel="C">C</a></li>
+      <li><a href="#D" title="" rel="D">D</a></li>
+      <li><a href="#E" title="" rel="E">E</a></li>
+      <li><a href="#F" title="" rel="F">F</a></li>
+      <li><a href="#G" title="" rel="G">G</a></li>
+      <li><a href="#H" title="" rel="H">H</a></li>
+      <li><a href="#I" title="" rel="I">I</a></li>
+      <li><a href="#J" title="" rel="J">J</a></li>
+      <li><a href="#K" title="" rel="K">K</a></li>
+      <li><a href="#L" title="" rel="L">L</a></li>
+      <li><a href="#M" title="" rel="M">M</a></li>
+      <li><a href="#N" title="" rel="N">N</a></li>
+      <li><a href="#O" title="" rel="O">O</a></li>
+      <li><a href="#P" title="" rel="P">P</a></li>
+      <li><a href="#Q" title="" rel="Q">Q</a></li>
+      <li><a href="#R" title="" rel="R">R</a></li>
+      <li><a href="#S" title="" rel="S">S</a></li>
+      <li><a href="#T" title="" rel="T">T</a></li>
+      <li><a href="#U" title="" rel="U">U</a></li>
+      <li><a href="#V" title="" rel="V">V</a></li>
+      <li><a href="#W" title="" rel="W">W</a></li>
+      <li><a href="#X" title="" rel="X">X</a></li>
+      <li><a href="#Y" title="" rel="Y">Y</a></li>
+      <li><a href="#Z" title="" rel="Z">Z</a></li>
+      
+</ul>
 <?php
 $categories = $this->getStoreCategories(true,false,true);
 $categoryHelper = $this->getCategoryHelper();
+$allSubCategories = array();
 ?>
-<ul>
 <?php
 foreach($categories as $category):
 
-     if (!$category->getIsActive()) {
-        continue;
-     }
+     	if (!$category->getIsActive()) {
+		continue;
+     	}
 
-     if ($category->getId()!=6)
-	continue;
+        if ($category->getId()!=6)
+		continue;
 
-?>
-<li><a href="<?php echo $categoryHelper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a></li>
-<?php  
-if($childrenCategories = $this->getChildCategories($category)):
-?>
-<ul>
-<?php
-foreach($childrenCategories as $childrenCategory):
-     if (!$childrenCategory->getIsActive()) {
-        continue;
-     }
-?>
-<li><a href="<?php echo $categoryHelper->getCategoryUrl($childrenCategory) ?>"><?php echo $childrenCategory->getName() ?></a></li>
-<?php
+	if($childrenCategories = $this->getChildCategories($category)):
+		foreach($childrenCategories as $childrenCategory):
+     			if (!$childrenCategory->getIsActive()) {
+        			continue;
+     			}
+     			$record = array();
+     			$record['name'] = $childrenCategory->getName();
+     			$record['url'] = $categoryHelper->getCategoryUrl($childrenCategory);
+     			$allSubCategories[] = $record;
+		endforeach;
+	endif;
 endforeach;
-?>
-</ul>
-<?php
-endif;
-endforeach;
-?>
-</ul>
+//print_r($allSubCategories);
+$mid =array();
+foreach ($allSubCategories as $key => $row) {
+	$mid[$key]  = $row['name'];
+}
 
+array_multisort($mid, SORT_ASC, $allSubCategories);
+
+//print_r($allSubCategories);
+$previous = '';
+foreach($allSubCategories as $value) {
+    	$firstLetter = substr($value['name'], 0, 1);
+	if ($previous=='')
+	{
+		echo '<div class="brands_div col-lg-4 col-sm-6 brands_'.ord($firstLetter).'"><ul class="brand_group"><li class="brand_letter">'.$firstLetter.'</li>';
+	}
+    	else if(strcasecmp($previous,$firstLetter)!=0)
+	{
+		echo '</ul></div>';
+		echo '<div class="brands_div col-lg-4 col-sm-6 brands_'.ord($firstLetter).'">';
+		echo '<ul class="brand_group"><li class="brand_letter">'.$firstLetter.'</li>';
+	} 
+    	$previous = $firstLetter;
+
+    	echo '<li class="brand_indivdual"><a class="brand_link" href="'.$value['url'].'" >'.$value['name'].'</a></li>';
+}
+if ($previous!='')
+	echo '</ul></div>';
+?>
+
+<script type="text/javascript">
+    //<![CDATA[
+    require([
+    'jquery'
+    ], function($){
+                    
+     	$("ul#brands-filter li a").click(function(e) 
+        {
+                var letter = $(this).text();
+		if (letter !=undefined && letter!='')
+		{
+			if (letter=='All')
+				$("div.brands_div").show('slow');
+			else
+			{
+			//$("div.brands_div").show('fast');
+			var charInt = letter.charCodeAt(0);
+			for (var i=65; i<=90; i++)
+			{
+				if (i < charInt)
+				{
+					$("div.brands_div.brands_"+i).hide('slow');
+				}
+			}
+			for (var i=90; i>=charInt; i--)
+			{
+				$("div.brands_div.brands_"+i).show('slow');
+			}
+			}
+		}
+        });                    
+    });
+        
+    //]]>
+    </script>
 
