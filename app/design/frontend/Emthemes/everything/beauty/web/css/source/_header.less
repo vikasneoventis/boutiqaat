@@ -1,0 +1,151 @@
+.page-header .panel.wrapper {
+	background-color: rgba(240, 240, 240, 0.88);
+}	
+
+.em-header-14.page-header .header.content:not(.navbar-fixed-top) .minicart-wrapper .action.showcart:hover {
+	border-color: @common_button_border_color;
+    background-color: @common-button_hover_bg;
+}
+
+.page-header .switcher.switcher-language .switcher-trigger span, .page-footer .switcher.switcher-language .switcher-trigger span {
+	color: #000;
+}
+
+.page-header .switcher .options .action.toggle:after, .page-footer .switcher .options .action.toggle:after {
+	color: #000;
+}
+
+.page-header .switcher .options .action.toggle:hover:after, .page-footer .switcher .options .action.toggle:hover:after {
+	color: #000;
+}
+
+.em-header-14.page-header .switcher:after {
+	color: #000;
+}
+
+.header.panel > .header.links > li > a:hover {
+  color: @common_anchor_hover;
+}
+.header.panel > .header.links > li > a:active {
+  color: @common_anchor_hover;
+}
+
+.page-header .ui-dialog-content a:hover {
+    color: #cca745;
+}
+
+@media (min-width: 768px), print {
+.logo img{
+    width:150px;
+	height:54px;
+}
+.header.panel > .header.links > li > a,.header.panel > .header.links > li > a:visited {
+	color: #000;
+}
+
+.em-header-14.page-header .header.panel .header.links > li:after {
+    color: #000;
+}
+.em-header-14.page-header .header.content {
+    padding: 0;
+}
+
+.em-header-14.page-header .em-minicart {
+    margin-top: 10px;
+    margin-bottom: 10px;
+	position: relative;
+    z-index: 9999;
+}
+
+.header.content:not(.navbar-fixed-top) .minicart-wrapper .action.showcart {
+	background: @common_button_bg_color!important;
+}
+
+.header.content:not(.navbar-fixed-top) .minicart-wrapper:hover .action.showcart {
+	border-color: @common_button_border_color;
+    background-color: @common-button_hover_bg!important;
+}
+.em-header-14.page-header .header.content:not(.navbar-fixed-top) .em-search-icon.mobile-search-icon {
+	display: block !important;
+    z-index: 999999;
+    position: relative;
+    float: right;
+    margin: 5px 0 0 0;
+    height: 46px;
+    width: 46px;
+    right: 0;
+}
+
+.em-header-14.page-header .header.content:not(.navbar-fixed-top) .em-search-icon.mobile-search-icon span:before {
+    line-height: 44px;
+}
+
+.header.content.navbar-fixed-top .em-search-icon.mobile-search-icon {
+	z-index: 9999;
+}
+/*search*/
+
+.em-search.mobile-search-wrapper .em-container-js-mobile-search {
+	display:none;
+}
+
+.em-search.mobile-search-wrapper.active .em-container-js-mobile-search {
+	display:block;
+}
+
+.em-search-style02 {
+    margin-top: 10px;
+	z-index: 999999;
+    position: relative;
+	display:none;
+}
+}
+/*end desktop media query*/	
+
+/*start mobile media query*/
+@media only screen and (max-width: 767px) 
+{
+	.header.content.navbar-fixed-top {
+        background: #fff;
+        box-shadow: 0 0 5px #bdbdbd;
+        -moz-box-shadow: 0 0 5px #bdbdbd;
+        -webkit-box-shadow: 0 0 5px #bdbdbd;
+        -o-box-shadow: 0 0 5px #bdbdbd;
+        -ms-box-shadow: 0 0 5px #bdbdbd;
+        min-height: 65px;
+        width: 100%;
+        max-width: 100% !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 889;
+        padding: 5px 0 !important;
+        margin: 0 auto;
+        position: fixed !important;
+        -webkit-animation-name: fadeInDown;
+        -webkit-animation-duration: 5.0s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: normal;
+        -webkit-animation-play-state: running;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-name: anim_titles;
+        -moz-animation-duration: 5.0s;
+        -moz-animation-timing-function: linear;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-direction: normal;
+        -moz-animation-play-state: running;
+        -moz-animation-fill-mode: forwards;
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -webkit-animation-duration: 0.7s;
+        -moz-animation-duration: 0.7s;
+        -webkit-animation-delay: 0s;
+        -moz-animation-delay: 0s;
+        -webkit-animation-timing-function: ease-out;
+        -moz-animation-timing-function: ease-out
+    }	
+}
+/*end mobile media query*/
