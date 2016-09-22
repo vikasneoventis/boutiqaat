@@ -8,13 +8,13 @@
 .level2.dropdown-submenu .submenu.dropdown-menu {
 	background:#fff;
 }
-.ios .nav-sections {
+/*.ios .nav-sections {
 	left:-81%;
 }
 
 .ios .nav-sections {
 	width:81%;
-}
+}*/
 
 .nav-electronics,.nav-women,.nav-newproducts,.nav-jewellery {
 	    display: none!important;
@@ -163,7 +163,7 @@ ul.brands li.col-xl-4 a:hover {
 	}
 
 /*start desktop media query*/
-@media (min-width: 768px), print 
+@media (min-width: 800px), print 
 {
 	.navigation {
 		background:none;
@@ -201,11 +201,6 @@ ul.brands li.col-xl-4 a:hover {
 		background:@common_button_bg_color;
 	}
 
-	.em-header-14.page-header .em-menu-hoz {
-		width: 100%;
-		position: absolute;
-		margin: 4px 0 0 0;
-	}	
 	.navigation .ves-megamenu .level0 .submenu .submenu, .ves-megamenu .subgroup > .submenu {
 		padding: 0;
 	}
@@ -287,11 +282,18 @@ ul.brands li.col-xl-4 a:hover {
 		float: right
 	}
 }
+@media only screen and (min-width:800px){
+	.em-header-14.page-header .em-menu-hoz {
+		width: 100%;
+		position: absolute;
+		margin: 4px 0 0 0;
+	}	
+}
 /*end desktop media query*/
 
 /*start mobile media query*/
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 799px){
 	.ves-menu .navigation .level0 > .submenu {
 		background: none!important;
 	}
@@ -342,5 +344,18 @@ ul.brands li.col-xl-4 a:hover {
 	.ves-megamenu .dropdown-menu .megamenu-footer {
 		display:none;
 	}
+	.ves-megamenu .nav-mobile .col-sm-2 {
+		width:100%!important;
+	}
+	.navigation .level0 .submenu a:hover, .navigation .level0 .submenu a.ui-state-focus {
+		background-color: #f8f8f8!important;
+	}
+	.ves-megamenu .dropdown-menu .subgroup.level1 > .submenu > .content-wrap > .megamenu-content .col-sm-12 {
+		width:100%!important;
+	}
 }
 /*end mobile media query*/
+
+/*start tablet portrait media query*/
+
+/*end tablet portrait media query*/
