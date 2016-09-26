@@ -27,7 +27,12 @@
                         });
                     
                 }
-			
+
+        $("body").addClass( "full-main-column" );
+        if( $('div.sidebar.sidebar-main').length )
+            {
+                $("body").removeClass( "full-main-column" );
+            }
     });
         
     //]]>

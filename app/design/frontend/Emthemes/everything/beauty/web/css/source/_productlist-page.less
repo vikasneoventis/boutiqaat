@@ -1,20 +1,25 @@
 .catalog-category-view .category-description .boutiqaat-video-container {
 	min-height: 400px;
 }
-.catalog-category-view #em-grid-mode .product.name a {
+.catalog-category-view #em-grid-mode .product.name a,.catalogsearch-result-index #em-grid-mode .product.name a {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
     display: block;
 }
 
+.products-list .product-item .product-item-description {
+    clear: both;
+}
+
 .products.wrapper.list.products-list .product-item-info .qs-btn-container {
-	top: 37.3%;
-	left: 42.5px;
+	position: static;
+    text-align: left;
+    display: inline;
 }
 
 @media only screen and (max-width: 767px) {
-	.catalog-category-view .products-grid .product-item-inner {
+	.catalog-category-view .products-grid .product-item-inner,.catalogsearch-result-index .products-grid .product-item-inner {
 		display: none;
 	}
 	.catalog-category-view #em-grid-mode .product-item .product-shop-top {
@@ -43,4 +48,27 @@
 	.modes-mode.active,.modes-mode:hover:before,.modes-mode.active:before {
 		color:@common_anchor_hover!important;
 	}
+    .products.wrapper.list.products-list .product-item-info .product-item-actions .actions-primary,.products.wrapper.list.products-list .product-item-info .product-item-actions .actions-primary + .actions-secondary {
+        float: left;
+        margin: 0 2px 0 0;
+    }
+}
+
+/*celebrity page*/
+.category-boutiqaat-celebrities .columns .column.main .widget-title.em-widget-title {
+    display: none;
+}
+.category-boutiqaat-celebrities.page-layout-2columns-left .sidebar-main #narrow-by-list2 dt {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .category-boutiqaat-celebrities.page-products .columns {
+        padding-top: 0;
+    }
+}
+@media (min-width: 768px), print {
+    body.full-main-column.page-layout-2columns-left .column.main {
+        width: 100%;
+    }   
 }
