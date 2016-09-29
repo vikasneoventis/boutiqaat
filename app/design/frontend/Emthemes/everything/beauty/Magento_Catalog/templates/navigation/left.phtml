@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Category left navigation
+ *
+ * @var $block \Magento\Catalog\Block\Navigation
+ */
+?>
+<?php if (!$block->getCategory()) {
+    return;
+} ?>
+<?php $_categories = $block->getCurrentChildCategories(); ?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
+<?php if ($_count): ?>
+    <div class="block filter" id="layered-filter-block" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}'>
+        <div class="block-title filter-title">
+            <strong data-role="title"><?php /* @escapeNotVerified */ echo __('Shop By') ?></strong>
+        </div>
+        <div class="block-content filter-content">
+            <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?php /* @escapeNotVerified */ echo __('Shopping Options') ?></strong>
+            <div class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
+                <div data-role="collapsible" class="filter-options-item">
+                <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __('Category') ?></div>
+                <div data-role="content" class="filter-options-content">
+                    <ol class="items">
+                        <?php foreach ($_categories as $_category): ?>
+                            <?php if ($_category->getIsActive()): ?>
+                                <li class="item">
+                                    <a href="<?php /* @escapeNotVerified */ echo $block->getCategoryUrl($_category) ?>"<?php if ($block->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $block->escapeHtml($_category->getName()) ?></a>
+                                    <span class="count"><?php /* @escapeNotVerified */ echo $_category->getProductCount() ?></span>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    </ol>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
