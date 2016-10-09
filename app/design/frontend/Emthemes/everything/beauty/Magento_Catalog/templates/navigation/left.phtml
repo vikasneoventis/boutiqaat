@@ -19,14 +19,17 @@
 <?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
 <?php if ($_count): ?>
     <div class="block filter" id="layered-filter-block" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}'>
+        <input name="filterquery" type="search" placeholder="Search Your Favourite Celebrity" class="hide-mobile">
         <div class="block-title filter-title">
             <strong data-role="title"><?php /* @escapeNotVerified */ echo __('Shop By') ?></strong>
         </div>
         <div class="block-content filter-content">
             <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?php /* @escapeNotVerified */ echo __('Shopping Options') ?></strong>
+            <input name="filterquerymobile" type="search" placeholder="Search Your Favourite Celebrity" class="show-mobile">
             <div class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
                 <div data-role="collapsible" class="filter-options-item">
-                <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __('Category') ?></div>
+                <div data-role="title" class="filter-options-title celebpage-option-title"><?php /* @escapeNotVerified */ echo __('Filter') ?></div>
+                <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __('Category') ?></div>    
                 <div data-role="content" class="filter-options-content">
                     <ol class="items">
                         <?php foreach ($_categories as $_category): ?>

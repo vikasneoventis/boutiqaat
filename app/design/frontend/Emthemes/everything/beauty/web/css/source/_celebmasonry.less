@@ -97,10 +97,60 @@
         column-count: auto;
     }
 }
-.category-cms .em-widget-title {
+
+/*Celeb Landing Page*/
+
+/*hide elements*/
+
+.category-cms .em-widget-title,.category-boutiqaat-celebrities .block-title.filter-title,.category-boutiqaat-celebrities .filter-options-title,.filter-options-title.celebpage-option-title {
 	display:none;
 }
 
 .category-boutiqaat-celebrities .gridmason {
     margin-bottom: 0;
+}
+
+.category-boutiqaat-celebrities .filter-options-title.celebpage-option-title {
+    display: block;
+    font-weight: bold;
+}
+
+.category-boutiqaat-celebrities .block.filter input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.category-boutiqaat-celebrities .block.filter input.hide-mobile {
+    display: block;
+}
+.category-boutiqaat-celebrities .block.filter input.show-mobile {
+    display: none;
+}
+
+@media only screen and ( max-width: 639px ) {
+    .category-boutiqaat-celebrities .block-title.filter-title {
+        display: block;
+    }
+    .category-boutiqaat-celebrities .block.filter input {
+        position: fixed;
+        top: 54px;
+        height: 30px;
+        z-index: 99;
+        left: 0;
+        width: 91%;
+        margin: 0 0 0 5%;
+        border: 1px #e1e1e1 solid;
+    }
+    .category-boutiqaat-celebrities .filter.active .filter-options {
+        top: 80px;
+    }
+    .category-boutiqaat-celebrities .block.filter input.hide-mobile {
+        display: none;
+    }
+    .category-boutiqaat-celebrities .block.filter input.show-mobile {
+        display: none;
+    }
+    .category-boutiqaat-celebrities .block.filter.active input.show-mobile {
+        display: block;
+    }
 }
