@@ -15,7 +15,11 @@
 * CSS is a little wonky in IE6, just set your listnav class to be 100% width and it works fine.
 *
 */
-(function ($) {
+(function(factory) {
+	if ( typeof define === 'function' && define.amd ) {
+		define(['jquery'], factory);
+	} 
+}(function($) {
   $.fn.listnav = function (options) {
     var opts = $.extend({}, $.fn.listnav.defaults, options),
         letters = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '-'],
@@ -370,4 +374,4 @@
     prefixes: [],
     filterSelector: ''
   };
-})(jQuery);
+}));

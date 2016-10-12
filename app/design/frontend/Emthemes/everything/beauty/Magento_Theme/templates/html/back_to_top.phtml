@@ -42,7 +42,7 @@
 	<script type="text/javascript">
 	requirejs(['jquery','listnavpagination'], function($){
 		jQuery(document).ready(function($) {
-            $('.dropdown-menu .content-wrap .megamenu-content .level1.nav-dropdown').each(function(i) {
+            $('.navigation li.level0 .submenu.dropdown-menu.animated .content-wrap .megamenu-content .level1.nav-dropdown').each(function(i) {
 				$(this).attr('id', 'row-wrapper' + i);
 			});
 			$('#row-wrapper0').listnav({
